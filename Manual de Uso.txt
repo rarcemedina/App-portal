@@ -1,0 +1,36 @@
+Herramientas utilizadas para el desarrollo de la aplicacion Web
+1 PostgresSQL 9.5 
+2 Node.js
+3 Spring Tool Suite Version: 3.9.4.RELEASE
+4 Microsoft Visual Studio Code 1.41.0
+5 Angular 4
+6 Spring Boot
+
+Pasos para la ejecucion de la aplicacion:
+Crear las dos base de datos con los siguientes scripts en el PosgresSQL
+CREATE DATABASE "auth.server"
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'Spanish_Paraguay.1252'
+       LC_CTYPE = 'Spanish_Paraguay.1252'
+       CONNECTION LIMIT = -1;
+
+CREATE DATABASE portalfpuna
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'Spanish_Paraguay.1252'
+       LC_CTYPE = 'Spanish_Paraguay.1252'
+       CONNECTION LIMIT = -1;
+
+A continuacion abrir los dos proyectos authjwt.server y portalestudiante.rest.api
+El IDE descargara a su pc todas las dependencias definidas en el pom.xml
+A continuacion proceder a ejecutar ambos fuentes, pero primero validar en cada fuente los datos de contraseña del postgres en el archivo application.properties
+Primero se debe ejecutar el fuente authjwt.server que contendra la base de datos de los usuarios y sus validaciones correspondientes,
+luego ejecutar el segundo fuente portalestudiante.rest.api que contendra todos los datos del estudiante referentes al portal
+Al momento de ejecutar ambos fuentes automaticamente se van a crear las tablas en las base de datos que creamos en los pasos anteriores,
+tambien ambos back ends quedaran levantados en un servidor virtual tomcat que tiene el ID Spring
+Una vez instalado el node.js, para ejecutar nuestro front debemos ir a nuestro fuente fpapp desde la linea de comandos cmd y nos posicionamos en nuestro front
+Ej: C:\Users\Ricardo\Desktop\fpapp> y ejecutamos el comando ng serve para levantar nuestro servidor node con nuestro front,
+por ultimo abrir el navegador y escribbir la siguiente url para acceder a la aplicacion http://localhost:4200/
