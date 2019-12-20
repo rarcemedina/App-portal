@@ -1,0 +1,51 @@
+<div *ngIf="info.token; else loggedOut">
+  <!--<h5 class="text-primary">Tu informacion</h5>
+  <p>
+    <strong>Username:</strong> {{info.username}}<br />
+    <strong>Roles:</strong> {{info.authorities}}<br />
+    <strong>Token:</strong> {{info.token}}.
+  </p>-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-2">
+        <button class="btn btn-danger btn-sm float-right" (click)="logout()">Cerrar sesion</button>
+      </div>
+    </div>
+    <p></p>
+    <div class="row">
+      <div class="col-md-4">
+        <app-extension-dona></app-extension-dona>
+        <p></p>
+        <button class="btn btn-success" (click)="verExtension()">Detalles</button>
+      </div>
+      <div class="col-md-4">
+        <app-materia-dona></app-materia-dona>
+        <p></p>
+        <button class="btn btn-primary" (click)="verMateria()">Detalles</button>
+      </div>
+      <div class="col-md-4">
+        <app-pasantia-dona></app-pasantia-dona>
+        <p></p>
+        <button class="btn btn-warning" (click)="verPasantia()">Detalles</button>
+      </div>
+    </div>
+    <p></p>
+    <p></p>
+    <app-extensions-list *ngIf="ver_extensiones"></app-extensions-list>
+    <app-materias-list *ngIf="ver_materias"></app-materias-list>
+    <app-pasantias-list *ngIf="ver_pasantia"></app-pasantias-list>
+    <p></p>
+    <p></p>
+    <div class="row">
+      <div class="col-md-12 col-md-offset-2">
+        <button class="btn btn-info btn-sm float-right" (click)="verCorrelativas()">Ver Correlativas</button>
+      </div>
+    </div>
+    <p></p>
+    <p></p>
+    <app-correlatividad-list *ngIf="ver_correlativa"></app-correlatividad-list>
+  </div>
+
+  <ng-template #loggedOut>
+    Por favor, inicie sesion.
+  </ng-template>

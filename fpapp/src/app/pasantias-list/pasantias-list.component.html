@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Documentos Gestionados</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>CEDULA</th>
+                        <th>DOCUMENTO</th>
+                        <th>ESTADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pasantia of pasantias | async" class="text-center">
+                        <td>{{pasantia.cedula}}</td>
+                        <td>{{pasantia.documento}}</td>
+                        <td>{{pasantia.estado}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>TOTAL DOCS.</td>
+                        <td>-</td>
+                        <td>{{this.cantDoc}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

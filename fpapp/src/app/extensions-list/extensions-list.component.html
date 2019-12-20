@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Horas de Extension</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>CEDULA</th>
+                        <th>ACTIVIDAD</th>
+                        <th>HORAS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let extension of extensiones | async" class="text-center">
+                        <td>{{extension.cedula}}</td>
+                        <td>{{extension.actividad}}</td>
+                        <td>{{extension.horas}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>TOTAL</td>
+                        <td>-</td>
+                        <td>{{this.porcentaje}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
